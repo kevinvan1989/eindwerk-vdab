@@ -1,0 +1,1074 @@
+@charset "utf-8";
+
+/* NORMALIZE */
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong,
+sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol,
+ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+em {
+  font-weight: 900;
+}
+
+/**** ALGEMEEN ****/
+body {
+  --green_text_color: #9ac197;
+  font-family: "Work Sans", Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.hover--pointer:hover,
+.hover--pointer:focus,
+.dropdown-navigatie li,
+.bestverkocht {
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-content {
+  padding-top: 2em;
+  padding-bottom: 3em;
+}
+
+.btn {
+  color: #faf5f5;
+  background-color: #9ac197;
+}
+
+.btn:hover,
+.btn:focus {
+  color: white;
+  background-color: #abd7a8;
+}
+
+.disabled,
+.disabled:hover,
+.disabled:focus {
+  background-color: #717171;
+  color: #faf5f5;
+}
+
+.groeneTekst {
+  color: var(--green_text_color);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* COLUMNS */
+.col-1 {
+  width: 100%;
+}
+.col-2 {
+  width: 66.66%;
+}
+.col-3 {
+  width: 33.33%;
+}
+.col-4 {
+  width: 22.5%;
+}
+.col-6 {
+  width: 14.5%;
+}
+.col-50 {
+  width: 48%;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: 500;
+  padding-bottom: 1.2em;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: 700;
+  padding-bottom: 1.2em;
+}
+
+/**** HEADER & FOOTER ****/
+
+.full-width-header {
+  min-height: 84px;
+  background-color: #abd7a8;
+}
+
+.full-width-footer {
+  min-height: 110px;
+  background-color: #e8fce7;
+  margin-top: auto;
+}
+
+.header,
+.footer,
+.productdetail {
+  justify-content: space-between;
+}
+
+/* HEADER */
+.header {
+  align-items: center;
+}
+
+/* FOOTER */
+.footer {
+  font-size: 0.8em;
+  padding-top: 1.8em;
+  padding-bottom: 1.8em;
+  color: #717171;
+  flex-direction: row-reverse;
+}
+
+.footer .links {
+  text-align: center;
+}
+
+.footer ul {
+  list-style-type: none;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #717171;
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: black;
+}
+
+/**** LOGO ****/
+/* Logo image replacement */
+#logo a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 14px 0 20px 0;
+  padding: 0;
+  background: url(./../img/logo_prularia_zwart.png) no-repeat;
+  background-size: contain;
+  text-indent: -99999px;
+}
+
+#logo a:hover,
+#logo a:focus {
+  background: url(./../img/logo_prularia_wit.png) no-repeat;
+  background-size: contain;
+}
+
+/**** TOPMENU ****/
+.menu-icoon {
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+#menu--top {
+  text-align: right;
+}
+
+.menu--top ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu--top ul li {
+  display: inline-block;
+  position: relative;
+  color: #696969;
+}
+
+.menu--top ul li a {
+  text-decoration: none;
+  color: #696969;
+}
+
+.menu--top ul li:hover,
+.menu--top ul li:focus,
+.menu--top ul li a:hover,
+.menu--top ul li a:focus {
+  color: black;
+}
+
+.fa,
+.fas,
+.far {
+  font-size: 1.2rem;
+}
+
+.menu--top ul li.hide--desktop {
+  display: none;
+}
+
+/**** DROPDOWN - LOGIN ****/
+.menu__login__dropdown {
+  font-size: 0.8em;
+  width: 34%;
+  min-width: 320px; /* toegevoegd vr smallere situaties :p */
+  max-width: 35em;
+  background: #faf5f5;
+  /* position: fixed; */ /* maakte de dropdown formulieren sticky tov van het vensten ipv de pagina */
+    position: absolute;/* nieuw */
+  top: 64px;
+  /* right: 240px; */
+  right: 15%; /* smallere situaties? */
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+  text-align: center;
+  border: 1px solid var(--green_text_color);
+}
+
+.menu__login__dropdown form {
+  width: 90%;
+}
+
+.menu__login__dropdown input[type="text"],
+.menu__login__dropdown input[type="password"] {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
+
+.menu__login__dropdown a:hover,
+.menu__login__dropdown a:focus {
+  color: black;
+  text-decoration: underline;
+}
+
+.menu__login__dropdown::before,
+.menu__login__dropdown::after {
+  height: 50px;
+  width: 50px;
+  background-color: #faf5f5;
+  position: absolute;
+  top: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.selected {
+  font-weight: 800;
+}
+
+/***** DROPDOWN WINKELMAND *****/
+#winkelmandje {
+  justify-content: space-evenly;
+  min-width: 320px;
+  right: 10%;
+}
+
+#winkelmandje table {
+  margin: 0 1em;
+}
+
+#winkelmandje th {
+  padding: 1em 0.3em;
+  font-weight: bold;
+}
+
+#winkelmandje tr td:first-child {
+  padding: 0 1.5em 0 0;
+  text-align: right;
+}
+
+/**** DROPDOWN - NAVIGATIE ****/
+.dropdown-navigatie {
+  background-color: #faf5f5;
+  margin-right: 1.8em;
+  padding: 1.8em;
+  min-height: /* 647px */ 480px; 
+  height: 100%;
+  max-height: 83vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
+}
+
+.dropdown-navigatie ul {
+  list-style-type: none;
+}
+
+.dropdown-navigatie ul ul {
+  text-indent: 0.4em;
+  color: #717171;
+}
+
+.hoofdcategorie {
+  margin-bottom: 0.4em;
+}
+
+.lijst__sub__subcategorieen > li {
+  text-indent: 0.8em;
+}
+
+.lijst__subcategorieen > li:hover,
+.lijst__subcategorieen li:focus,
+.lijst__sub__subcategorieen > li:hover,
+.lijst__sub__subcategorieen > li:focus {
+  color: black;
+}
+
+/**** Product detail pagina ***/
+
+.productVoorraad {
+  padding-top: 1em;
+}
+
+.productPrijs,
+.productVoorraad,
+.dropdown-navigatie .current,
+.klantNaam {
+  color: #9ac197;
+}
+
+.productBeschrijving {
+  padding-top: 2em;
+}
+
+.productVoorraad .disabled {
+  background: none;
+  color: #b47474;
+}
+
+.dropdown-navigatie a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/**** GebruikerMenu ****/
+
+.gebruikerMenu.afgemeld input{
+   width: 100%;
+}
+
+.gebruikerMenu form{
+  width: 100%;
+  margin: 0 0 1em 0;
+}
+
+.gebruikerMenu.afgemeld a{
+  text-decoration: underline;
+}
+
+.gebruikerMenu.aangemeld li{
+  margin-bottom: 0.5em;
+}
+
+.gebruikerMenu.aangemeld li:hover{
+  font-weight: bold;
+}
+
+/**** Error ****/
+#error {
+  text-align: center; /* nieuw */
+  /* min-width: auto; */
+  width: 40%; /* nieuw */
+  /* height: 220px; */
+  min-height: 220px; /* nieuw */
+  color: #d13737;
+  position: fixed;
+  /* left: 40%; */
+  left: 30%; /* nieuw */
+  top: 20%;
+  background-color: #faf5f5;
+  border: 2px solid #d13737;
+  box-shadow: 0 1px 5px rgb(50 50 50 / 60%); /* nieuw */
+}
+
+#error > h2 {
+  /* boven de styling van de p tags geplaatst */
+  padding: 0.5em;
+  background: #d13737;
+  color: #faf5f5;
+}
+
+#error p {
+  /* nieuw */
+  margin-top: 2em;
+  margin-bottom: 1.2em;
+  padding: 0 1em;
+}
+
+/* #error>button, #error>p{
+  margin:1em;   
+} */
+
+#error .btn {
+  /* background-color:#696969; */
+  background-color: #979494; /* nieuw */
+  margin-bottom: 2em; /* nieuw */
+}
+
+#error .btn:hover, /* nieuw */
+  #error .btn:focus {
+  background-color: #696969;
+}
+
+/**** Coockie ****/
+#showcookie {
+  position: fixed;
+  width: 98%;
+  color: #faf5f5;
+  padding: 0.8rem 2rem;
+  bottom: 0;
+  left: 0;
+  background: rgba(80, 100, 78, 0.8);
+}
+
+#showcookie button {
+  font-size: 1.1em;
+  width: 15%;
+}
+
+i.fa-times-circle {
+  position: absolute;
+  right: -12.5px;
+  top: -12.5px;
+
+  color: #515151;
+}
+
+/**** PAGINA'S ****/
+/* landingspagina */
+.overzicht-producten {
+  justify-content: space-between;
+  gap: 3.33%;
+}
+
+.overzicht-producten::after {
+  content: "";
+  flex: auto;
+}
+
+/* overzicht bestverkochte producten */
+.bestverkocht {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.bestverkocht img {
+  padding-bottom: 0.4em;
+}
+
+.productnaam {
+  word-break: break-word;
+  text-transform: capitalize;
+  padding-top: 0.8em;
+}
+
+.productprijs {
+  color: #9ac197;
+  padding-top: 0.4em;
+  padding-bottom: 1em;
+}
+
+/* productdetail pagina */
+.productdetail .rechts form {
+  width: 100%;
+}
+
+.productNaam,
+.productPrijs {
+  font-size: 1.4em;
+  text-transform: capitalize;
+}
+
+.productBeschrijving,
+.productGewicht,
+.productEAN {
+  color: #717171;
+}
+
+.verminderMet1,
+.verhoogMet1 {
+  color: #9ac197;
+  line-height: 38px;
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.toevoegenWinkelwagenKnoppen input[type="number"] {
+  width: 40%;
+}
+
+.verminderMet1,
+.verhoogMet1,
+.toevoegenWinkelwagenKnoppen input[type="number"] {
+  background-color: #faf5f5;
+  height: 38px;
+  border: #999898 1px solid;
+}
+
+.toevoegenWinkelwagenKnoppen {
+  justify-content: space-between;
+  margin-top: 1.2em;
+}
+
+.toevoegenWinkelwagenKnoppen .btn {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 38px;
+}
+
+/* reviews */
+.reviewOverzicht {
+  border-top: #cacaca 1px solid;
+  border-bottom: #cacaca 1px solid;
+  margin-top: 4em;
+  margin-bottom: 3em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.reviewOverzicht h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0.4em;
+}
+
+.reviewOverzicht p,
+.reviewScore {
+  margin-bottom: 0.3em;
+}
+
+.reviewOverzicht .fas,
+.reviewOverzicht .far {
+  font-size: 100%;
+  color: #9ac197;
+}
+
+/* footer bestverkocht */
+.footerBestVerkocht {
+  margin-top: 2em;
+}
+
+.footer_bestverkocht {
+  justify-content: space-between;
+}
+
+/* winkelmand beheer*/
+.winkelmand .productdetail > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.winkelmand h2 {
+  padding-bottom: 0.5em;
+}
+
+.winkelmand a {
+  color: #9ac197;
+}
+
+#winkelmandform{
+  margin: 0;
+}
+
+#winkelmandform .btn{
+  width: 8em;
+}
+
+.toevoegenWinkelwagenKnoppen a {
+  padding: 0 0.5em;
+}
+
+.mafb {
+  margin: 1.25em 0;
+}
+
+.totaalMandje {
+  text-align: center;
+  margin-top: 1em;
+  background-color: #faf5f5;
+  padding: 1em;
+}
+
+.totaalMandje > span:nth-child(2) {
+  margin-left: 1em;
+}
+
+.winkelmand i {
+  padding-left: 1em;
+}
+
+.winkelmand a {
+  color: #717171;
+  text-decoration: none;
+}
+
+.winkelmand a:hover,
+.winkelmand a:focus {
+  text-decoration: underline;
+}
+
+/* bestelformulier */
+.bestelformulier thead {
+  font-weight: 900;
+  border-bottom: #717171 1px solid;
+  padding-bottom: 0.3em;
+}
+
+.bestelformulier thead td {
+  padding-bottom: .3em;
+}
+
+.bestelformulier tbody td {
+  padding-top: .3em;
+  padding-bottom: .3em;
+}
+
+.bestelformulier tfoot {
+  font-size: 1.2em;
+  font-weight: 900;
+  border-top: #717171 1px solid;
+}
+
+.bestelformulier tfoot td {
+padding-top: .3em;
+}
+
+.bestelformulier table {
+  text-transform: capitalize;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 2em;
+  border-collapse: collapse;
+}
+
+.bestelformulier .align-left {
+  text-align: left;
+}
+
+.actiecodeFormulier input[type="text"]{
+  width: 100%;
+}
+
+.actiecodeInput {
+  width: 77.5%;
+}
+
+.bestelformulier form,
+.bestelformulier .btn {
+  width: 100%;
+}
+
+.bestelformulier h2 {
+  width: 100%;
+}
+
+.bestelformulier input[type="text"]{
+  border: #b9b9b9 1px solid;
+}
+
+.bestelformulier .btn {
+  margin-bottom: 3em;
+}
+
+.bestelformulier .adressen {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.betaalwijze .fas,
+.betaalwijze .far,
+.betaalwijze .fa {
+  padding-left: .3em;
+}
+
+/**** RESPONSIVE ****/
+@media (max-width: 980px) {
+  .bestelformulier tfoot {
+    font-size: 1em;
+  }
+  .betaalwijze .col-3 {
+    width: 48%;
+  }
+} 
+
+@media (max-width: 900px) {
+  .wrapper {
+    width: 94%;
+  }
+
+  .col-4 {
+    width: 30%;
+  }
+
+  .overzicht-producten:last-child {
+    justify-content: flex-start;
+  }
+
+  .actiecodeInput {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .dropdown-navigatie {
+    padding: 0.8em;
+  }
+}
+
+@media (max-width: 660px) {
+  .dropdown-navigatie {
+    font-size: 0.8em;
+  }
+
+  .productdetail .col-50{
+    width: 100%;
+  }
+
+  .productdetail .productNaam {
+    padding-top: 1.4em;
+  }
+
+  .toevoegenWinkelwagenKnoppen .col-50 {
+    width: 48%;
+  }
+
+  .winkelmand .col-2{
+    width: 100%;
+  }
+
+  .betaalwijze .col-3 {
+    width: 90%;
+    padding-bottom: .3em;
+  }
+
+  .bestelformulier .adressen .col-50 {
+    width: 90%;
+  }
+
+  .bestelformulier .adressen .leveradres {
+    padding-bottom: 1em;
+  }
+
+  .footer_bestverkocht .col-6 {
+    width: 31%;
+  }
+}
+
+@media (max-width: 520px) {
+  /**** ALGEMEEN ****/
+  .wrapper {
+    width: 100%;
+  }
+
+  .hide--mobile {
+    display: none;
+  }
+
+  .main-content {
+    margin-top: 1em; 
+  }
+
+  .menu--top ul li.hide--desktop {
+    display: block;
+  }
+
+  .full-width-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -90px;
+    /* bottom: 100vh; */
+  }
+
+  .full-width-footer {
+    background-color: white;
+  }
+
+  #boom{
+    margin-top: 1em;
+    position: fixed;
+    top: 60px;
+    width: 95%;
+    height: 90vh;
+    overflow:auto;
+  }
+
+  .main-content h2 {
+    text-align: center;
+  }
+
+
+  /**** HEADER & FOOTER ****/
+  .logo {
+    width: 100%;
+  }
+  #logo a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header {
+    text-align: center;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer > .col-1,
+  .footer > .col-2,
+  .footer > .col-3,
+  .footer > .col-4 {
+    width: 100%;
+  }
+
+  .footer {
+    background-color: #e8fce7;
+    padding-top: 0;
+    margin-top: 1em;
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+  .links {
+    width: 100%;
+    background-color: #abd7a8;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+  .adres {
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+
+  /**** TOP-MENU ****/
+  .menu--top {
+    padding: 0.8em 0;
+    background: white;
+    width: 100vw;
+  }
+
+  .menu--top .fas,
+  .menu--top .far,
+  .menu--top .fa {
+    font-size: 1.2em;
+  }
+
+  .menu--top ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .menu--top ul li {
+    background: #e8fce7;
+    font-size: 1.8em;
+    width: 30%;
+    padding: 0.5em 0;
+  }
+
+  .menu__login__dropdown {
+    width: 99.8%;
+    left: 0;
+    right: 0;
+    top: 175px;
+    /* z-index: 10;  geprobeert om boven "zijbalk" te krijgen in mobile,
+     maar werkt niet, snap  niet waarom (David), opgelost in js op andere manier  */
+  }
+
+  #inlogForm form{
+    padding-left: 3em;
+  }
+
+  .dropdown-navigatie {
+    font-size: 2em;
+    text-align: center;
+    margin-right: 0;
+    min-height: auto;
+    max-height: 87vh;
+  }
+
+  /**** PAGINA'S ****/
+  /* landingspagina - bestverkochte producten */
+  .main-content {
+    padding-bottom: 1em;
+  }
+
+  .main-content h2 {
+    padding-top: 2em;
+  }
+
+  .main-content > .col-1,
+  .main-content > .col-2,
+  .main-content > .col-3,
+  .main-content > .col-4 {
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .overzicht-producten:last-child {
+    justify-content: space-between;
+    gap: 5%;
+  }
+
+  /* product detail pagina */
+  .productdetail img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .productdetail{
+    text-align: center;
+  }
+
+  .toevoegenWinkelwagenKnoppen {
+    justify-content: center;
+  }
+  
+  .verminderMet1,
+  .verhoogMet1, 
+  .toevoegenWinkelwagenKnoppen input[type="number"] {
+    height: 56px;
+    line-height: 56px;
+  }
+
+  .toevoegenWinkelwagenKnoppen .col-50 {
+    width: 51%;
+  }
+
+  .toevoegenWinkelwagenKnoppen .btn {
+    height: 56px;
+    margin-top: 1.4em;
+  }
+}
+
+/* registratieform */
+.registratieformulier {
+  text-align: center;
+  background-color: #faf5f5;
+  padding-top: 2em;
+  padding-bottom: 4em;
+}
+
+.registratieformulier h2 {
+  padding-bottom: 0;
+}
+
+.registratieformulier h3 {
+  font-size: 1.4em;
+  padding-top: 1.2em;
+  padding-bottom: 0.8em;
+}
+
+.hidden_label {
+  display: none;
+}
+
+.btn,
+input[type="text"],
+input[type="password"],
+input[list],
+select {
+  width: 90%;
+  text-align: center;
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  outline: none;
+  border: none;
+}
+
+.btn,
+input[list],
+select {
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
+
+.btn,
+input[type="checkbox"] {
+  margin-top: 0.8em;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+input:focus {
+  border: #717171 1px solid;
+}
+
+::placeholder {
+  color: #71717175;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+@media (min-width: 520px) {
+  form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 760px) {
+  form {
+    width: 60%;
+  }
+}
